@@ -19,46 +19,86 @@ export default class showThumb extends React.Component {
     return (
       <ScrollView style={styles.outside}>
         <View style={styles.container}>
-          <Image 
-          source={require('../images/gaycation.jpg')}
-          style={styles.poster}>
-          </Image>
-          <Image 
-          source={require('../images/huangsworld.jpg')}
-          style={styles.poster}>
-          </Image>
-          <Image 
-          source={require('../images/kingoftheroad.jpg')}
-          style={styles.poster}>
-          </Image>
-          <Image 
-          source={require('../images/lastchancehigh.jpg')}
-          style={styles.poster}>
-          </Image>
-          <Image 
-          source={require('../images/loveindustries.jpg')}
-          style={styles.poster}>
-          </Image>
-          <Image 
-          source={require('../images/pilotweek.jpg')}
-          style={styles.poster}>
-          </Image>
-          <Image 
-          source={require('../images/statesofundress.jpg')}
-          style={styles.poster}>
-          </Image>
-          <Image 
-          source={require('../images/vicehbo.jpg')}
-          style={styles.poster}>
-          </Image>
-          <Image 
-          source={require('../images/woman.jpg')}
-          style={styles.poster}>
-          </Image>
-          <Image 
-          source={require('../images/worldofsports.jpg')}
-          style={styles.poster}>
-          </Image>
+          <TouchableHighlight 
+            onPress={()=> (alert('clicked'))}
+            style={styles.poster}>
+              <Image 
+                source={require('../images/gaycation.jpg')}
+                style={styles.poster}>
+              </Image>
+          </TouchableHighlight>
+          <TouchableHighlight 
+            onPress={()=> (alert('clicked'))}
+            style={styles.poster}>
+              <Image 
+                source={require('../images/huangsworld.jpg')}
+                style={styles.poster}>
+              </Image>
+          </TouchableHighlight>
+          <TouchableHighlight 
+            onPress={()=> (alert('clicked'))}
+            style={styles.poster}>
+              <Image 
+                source={require('../images/kingoftheroad.jpg')}
+                style={styles.poster}>
+              </Image>
+          </TouchableHighlight>
+          <TouchableHighlight 
+            onPress={()=> (alert('clicked'))}
+            style={styles.poster}>
+              <Image 
+                source={require('../images/lastchancehigh.jpg')}
+                style={styles.poster}>
+              </Image>
+          </TouchableHighlight>
+          <TouchableHighlight 
+            onPress={()=> (alert('clicked'))}
+            style={styles.poster}>
+              <Image 
+                source={require('../images/loveindustries.jpg')}
+                style={styles.poster}>
+              </Image>
+          </TouchableHighlight>
+          <TouchableHighlight 
+            onPress={()=> (alert('clicked'))}
+            style={styles.poster}>
+              <Image 
+                source={require('../images/pilotweek.jpg')}
+                style={styles.poster}>
+              </Image>
+          </TouchableHighlight>
+          <TouchableHighlight 
+            onPress={()=> (alert('clicked'))}
+            style={styles.poster}>
+              <Image 
+                source={require('../images/statesofundress.jpg')}
+                style={styles.poster}>
+              </Image>
+          </TouchableHighlight>
+          <TouchableHighlight 
+            onPress={()=> (alert('clicked'))}
+            style={styles.poster}>
+              <Image 
+                source={require('../images/vicehbo.jpg')}
+                style={styles.poster}>
+              </Image>
+          </TouchableHighlight>
+          <TouchableHighlight 
+            onPress={()=> (alert('clicked'))}
+            style={styles.poster}>
+              <Image 
+                source={require('../images/woman.jpg')}
+                style={styles.poster}>
+              </Image>
+          </TouchableHighlight>
+          <TouchableHighlight 
+            onPress={()=> (alert('clicked'))}
+            style={styles.poster}>
+              <Image 
+                source={require('../images/worldofsports.jpg')}
+                style={styles.poster}>
+              </Image>
+          </TouchableHighlight>
         </View>
        </ScrollView>
     )
