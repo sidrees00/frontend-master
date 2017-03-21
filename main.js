@@ -6,19 +6,18 @@ import Show from './components/showThumb'
 class App extends React.Component {
   render() {
     return (
-      <Show style={{backgroundColor: 'black'}}/>
+      <View style={styles.container}>
+      <Show/>
+      </View>
     );
   }
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//     backgroundColor: 'black',
-//   },
-// });
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#141414',
+  },
+});
 
 Expo.registerRootComponent(App);
