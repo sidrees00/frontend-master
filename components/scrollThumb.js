@@ -8,7 +8,7 @@ import {
   TouchableHighlight,
   View,
 } from 'react-native';
-import data from '../shows.json'
+
 import styles from '../styles/stylesheet'
 
 function ScrollThumb(props){
