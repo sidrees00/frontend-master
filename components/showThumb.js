@@ -8,7 +8,7 @@ import {
   TouchableHighlight,
   View,
 } from 'react-native';
-import pics from '../shows.json'
+import data from '../shows.json'
 
 
 const WINDOW_WIDTH = Dimensions.get('window').width;
@@ -35,7 +35,11 @@ export default class showThumb extends React.Component {
       <View> 
         <View style={styles.main}>
           <Image source={this.state.main} style={styles.mainPoster} ></Image>
+          <Text style={styles.text}>
+            {data[0].title + ' Episodes: ' + data[0].episodes}
+          </Text>
         </View>
+
 
         <ScrollView style={styles.bottomScroll} horizontal={true}>
             <TouchableHighlight 
@@ -109,16 +113,24 @@ export default class showThumb extends React.Component {
 
 let styles = StyleSheet.create({
   main: {
+    display: 'flex',
     backgroundColor: 'red',
+    // justifyContent: 'center',
+    // alignContent: 'column',
   },
   mainPoster: {
     marginTop: 30,
-    marginBottom: 40,
+    marginBottom: 7,
     height: WINDOW_HEIGHT / 1.6,
     width: WINDOW_WIDTH / 1.3,
     display: 'flex',
     backgroundColor: '#141414',
     alignSelf: 'center',
+  },
+  text: {
+    color: 'white',
+    fontSize: 25,
+    alignSelf:'center',
   },
   bottomScroll: {
     display: 'flex',
@@ -149,16 +161,4 @@ let styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 200,
   },
-  text: {
-    color: 'white',
-    fontSize: 15,
-    marginLeft: 15,
-    marginTop: 25,
-    marginBottom: -5,
-  },
 });
-
-
-
-
-
