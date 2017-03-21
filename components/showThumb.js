@@ -15,23 +15,25 @@ const WINDOW_WIDTH = Dimensions.get('window').width;
 const WINDOW_HEIGHT = Dimensions.get('window').height;
 
 export default class showThumb extends React.Component {
+  constructor(props){
+    super(props)
+    this.state={
+      main: require('../images/gaycation.jpg')
+    }
+  }
+  handleClick(pic){
+    this.setState({main: pic})
+  }
   render () {
     return (
-      <ScrollView style={styles.outside}>
-        <View>
-          <TouchableHighlight 
-            onPress={()=> (alert('clicked'))}
-            style={styles.poster}>
-              <Image 
-                source={require('../images/vicehboCopy.jpg')}
-                style={styles.header}>
-              </Image>
-          </TouchableHighlight>
-        </View>
-          <Text style={styles.text}> Featured Shows </Text>
+     <ScrollView> 
+      <View style={styles.top}>
+      <Image source={this.state.main} style={styles.main} ></Image>
+      </View>
+      <ScrollView style={styles.outside} horizontal={true}>
         <View style={styles.container}>
           <TouchableHighlight 
-            onPress={()=> (alert('clicked'))}
+            onPress={this.handleClick.bind(this, require('../images/gaycation.jpg'))}
             style={styles.poster}>
               <Image 
                 source={require('../images/gaycation.jpg')}
@@ -39,7 +41,7 @@ export default class showThumb extends React.Component {
               </Image>
           </TouchableHighlight>
           <TouchableHighlight 
-            onPress={()=> (alert('clicked'))}
+            onPress={this.handleClick.bind(this, require('../images/huangsworld.jpg'))}
             style={styles.poster}>
               <Image 
                 source={require('../images/huangsworld.jpg')}
@@ -47,7 +49,7 @@ export default class showThumb extends React.Component {
               </Image>
           </TouchableHighlight>
           <TouchableHighlight 
-            onPress={()=> (alert('clicked'))}
+            onPress={this.handleClick.bind(this, require('../images/kingoftheroad.jpg'))}
             style={styles.poster}>
               <Image 
                 source={require('../images/kingoftheroad.jpg')}
@@ -55,7 +57,7 @@ export default class showThumb extends React.Component {
               </Image>
           </TouchableHighlight>
           <TouchableHighlight 
-            onPress={()=> (alert('clicked'))}
+            onPress={this.handleClick.bind(this, require('../images/lastchancehigh.jpg'))}
             style={styles.poster}>
               <Image 
                 source={require('../images/lastchancehigh.jpg')}
@@ -63,7 +65,7 @@ export default class showThumb extends React.Component {
               </Image>
           </TouchableHighlight>
           <TouchableHighlight 
-            onPress={()=> (alert('clicked'))}
+            onPress={this.handleClick.bind(this, require('../images/loveindustries.jpg'))}
             style={styles.poster}>
               <Image 
                 source={require('../images/loveindustries.jpg')}
@@ -71,7 +73,7 @@ export default class showThumb extends React.Component {
               </Image>
           </TouchableHighlight>
           <TouchableHighlight 
-            onPress={()=> (alert('clicked'))}
+            onPress={this.handleClick.bind(this, require('../images/pilotweek.jpg'))}
             style={styles.poster}>
               <Image 
                 source={require('../images/pilotweek.jpg')}
@@ -79,7 +81,7 @@ export default class showThumb extends React.Component {
               </Image>
           </TouchableHighlight>
           <TouchableHighlight 
-            onPress={()=> (alert('clicked'))}
+            onPress={this.handleClick.bind(this, require('../images/statesofundress.jpg'))}
             style={styles.poster}>
               <Image 
                 source={require('../images/statesofundress.jpg')}
@@ -87,7 +89,7 @@ export default class showThumb extends React.Component {
               </Image>
           </TouchableHighlight>
           <TouchableHighlight 
-            onPress={()=> (alert('clicked'))}
+            onPress={this.handleClick.bind(this, require('../images/woman.jpg'))}
             style={styles.poster}>
               <Image 
                 source={require('../images/woman.jpg')}
@@ -95,7 +97,7 @@ export default class showThumb extends React.Component {
               </Image>
           </TouchableHighlight>
           <TouchableHighlight 
-            onPress={()=> (alert('clicked'))}
+            onPress={this.handleClick.bind(this, require('../images/worldofsports.jpg'))}
             style={styles.poster}>
               <Image 
                 source={require('../images/worldofsports.jpg')}
@@ -104,22 +106,26 @@ export default class showThumb extends React.Component {
           </TouchableHighlight>
         </View>
        </ScrollView>
+       </ScrollView>
     )
   }
 }
 
 let styles = StyleSheet.create({
+  top: {
+
+  },
   outside: {
-    backgroundColor: '#141414',
+    // backgroundColor: '#141414',
     display: 'flex',
   },
   container: {
     display: 'flex',
     flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    marginTop: 5,
-    alignContent: 'row',
+    // flexWrap: 'wrap',
+    // justifyContent: 'space-between',
+    marginTop: 10,
+    // alignContent: 'row',
     margin: 8,
     marginRight: 15,
   },
@@ -144,5 +150,14 @@ let styles = StyleSheet.create({
     marginLeft: 15,
     marginTop: 25,
     marginBottom: -5,
-  }
+  },
+  main: {
+    marginTop: 30,
+    height: WINDOW_HEIGHT / 1.6,
+    width: WINDOW_WIDTH / 1.3,
+    display: 'flex',
+    backgroundColor: '#141414',
+    alignSelf: 'center',
+
+  },
 });
