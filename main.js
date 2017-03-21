@@ -1,7 +1,7 @@
 import Expo from 'expo';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Show from './components/showThumb'
+import Show from './components/container'
 
 class App extends React.Component {
   render() {
