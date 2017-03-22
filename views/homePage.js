@@ -17,22 +17,25 @@ export default class HomePage extends React.Component {
       main: require('../images/gaycation.jpg'),
       title: 'Gaycation',
       episodes:'24',
+      style: styles.scroll,
+      selected: styles.selected,
+
     }
   }
-  handleClick(a,b,c){
+  _handleClick(a,b,c){
     this.setState({main: a, title: b, episodes: c})
   }
   render () {
-    let show = data.map((show) => {
+    let scrollThumbs = data.map((show) => {
       let url = show.product_image_url,
           title = show.title,
           episodes = show.episodes;
 
       return(
         <Scrollthumb
-          onPress={this.handleClick.bind(this, url,title,episodes)}
+          onPress={this._handleClick.bind(this, url,title,episodes)}
           source={url}
-          style={styles.scroll}
+          style={this.state.title === title ? styles.selected : styles.scroll}
           title={title}
           episodes={episodes}>
         </Scrollthumb>)
@@ -56,7 +59,7 @@ export default class HomePage extends React.Component {
         </MetaText>
       
         <ScrollView style={styles.bottomScroll} horizontal={true}>
-            {show}
+            {scrollThumbs}
         </ScrollView>
       </View>
     )

@@ -20,6 +20,7 @@ let styles = StyleSheet.create({
     display: 'flex',
     backgroundColor: '#141414',
     alignSelf: 'center',
+    // borderWidth: 10,
   },
   text: {
     color: 'white',
@@ -30,8 +31,7 @@ let styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     margin: 5,
-    backgroundColor: '#141414'
-    // justifyContent: 'space-between',
+    backgroundColor: '#141414',
   },
   scroll: {
     height: WINDOW_HEIGHT / 5,
@@ -39,9 +39,15 @@ let styles = StyleSheet.create({
     backgroundColor: 'red',
     display: 'flex',
     margin: 4,
-    // border: 'solid',
-    // borderWidth: 3,
-    // borderColor: 'red',  
+  },
+  selected: {
+    height: WINDOW_HEIGHT / 5,
+    width: WINDOW_WIDTH / 4,
+    backgroundColor: 'red',
+    display: 'flex',
+    margin: 4,
+    borderWidth: 4,
+    borderColor: 'red',  
   },
 });
 
