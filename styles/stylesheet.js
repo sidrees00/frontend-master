@@ -1,12 +1,7 @@
 import React from 'react';
 import {
   Dimensions,
-  Image,
-  ScrollView,
   StyleSheet,
-  Text,
-  TouchableHighlight,
-  View,
 } from 'react-native';
 
 const WINDOW_WIDTH = Dimensions.get('window').width;
@@ -16,8 +11,6 @@ let styles = StyleSheet.create({
   main: {
     display: 'flex',
     backgroundColor: 'red',
-    // justifyContent: 'center',
-    // alignContent: 'column',
   },
   mainPoster: {
     marginTop: 30,
@@ -30,37 +23,25 @@ let styles = StyleSheet.create({
   },
   text: {
     color: 'white',
-    fontSize: 25,
+    fontSize: 23,
     alignSelf:'center',
   },
   bottomScroll: {
     display: 'flex',
     flexDirection: 'row',
-    marginTop: 10,
-    margin: 8,
-    marginRight: 15,
-    backgroundColor: 'blue'
-    // alignContent: 'row',
-    // flexWrap: 'wrap',
+    margin: 5,
+    backgroundColor: '#141414'
     // justifyContent: 'space-between',
   },
-  poster: {
-    height: WINDOW_HEIGHT / 4.5,
-    width: WINDOW_WIDTH / 3.5,
+  scroll: {
+    height: WINDOW_HEIGHT / 5,
+    width: WINDOW_WIDTH / 4,
+    backgroundColor: 'red',
     display: 'flex',
-    margin: 5,
-    marginTop: 5,
-    border: 'outset',
-    borderWidth: 3,
-    borderColor: 'red',  
-  },
-  header: {
-    height: WINDOW_HEIGHT / 4.2,
-    width: WINDOW_WIDTH / 1.1,
-    display: 'flex',
-    margin: 11,
-    marginTop: 10,
-    marginBottom: 200,
+    margin: 4,
+    // border: 'solid',
+    // borderWidth: 3,
+    // borderColor: 'red',  
   },
 });
 

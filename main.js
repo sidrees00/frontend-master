@@ -1,13 +1,13 @@
 import Expo from 'expo';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Show from './components/container'
+import HomePage from './views/homePage';
 
 class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-      <Show/>
+        <HomePage/>
       </View>
     );
   }
