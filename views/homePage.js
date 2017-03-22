@@ -19,21 +19,22 @@ export default class HomePage extends React.Component {
       episodes:'24',
       style: styles.scroll,
       selected: styles.selected,
-
+      borderColor: '#596A02',
     }
   }
-  _handleClick(a,b,c){
-    this.setState({main: a, title: b, episodes: c})
+  _handleClick(a,b,c,d){
+    this.setState({main: a, title: b, episodes: c, borderColor: d})
   }
   render () {
     let scrollThumbs = data.map((show) => {
       let url = show.product_image_url,
           title = show.title,
-          episodes = show.episodes;
+          episodes = show.episodes,
+          borderColor = show.borderColor;
 
       return(
         <Scrollthumb
-          onPress={this._handleClick.bind(this, url,title,episodes)}
+          onPress={this._handleClick.bind(this, url,title,episodes, borderColor)}
           source={url}
           style={this.state.title === title ? styles.selected : styles.scroll}
           title={title}
@@ -45,7 +46,7 @@ export default class HomePage extends React.Component {
       <View> 
         <MainThumb style={styles.main}
           source={this.state.main} 
-          style={styles.mainPoster}>
+          style={[styles.mainPoster, {borderColor: this.state.borderColor}]}>
         </MainThumb>
         
         <MetaText

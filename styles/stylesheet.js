@@ -20,12 +20,15 @@ let styles = StyleSheet.create({
     display: 'flex',
     backgroundColor: '#141414',
     alignSelf: 'center',
-    // borderWidth: 10,
+    borderWidth: 10,
+    // borderColor: '#CEDFE9'
   },
   text: {
     color: 'white',
     fontSize: 23,
     alignSelf:'center',
+    fontWeight: '300',
+    fontFamily: 'roboto',
   },
   bottomScroll: {
     display: 'flex',
