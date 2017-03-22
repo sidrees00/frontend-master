@@ -6,7 +6,7 @@ import {
 import data from '../shows.js';
 import styles from '../styles/stylesheet';
 import Scrollthumb from '../components/scrollThumb';
-import MainThumb from '../components/mainThumb';
+import MainPoster from '../components/mainPoster';
 import MetaText from '../components/metaText';
 
 
@@ -17,37 +17,43 @@ export default class HomePage extends React.Component {
       main: require('../images/gaycation.jpg'),
       title: 'Gaycation',
       episodes:'24',
+      borderColor: '#596A02',
       style: styles.scroll,
       selected: styles.selected,
-      borderColor: '#596A02',
     }
-  }
-  _handleClick(a,b,c,d){
-    this.setState({main: a, title: b, episodes: c, borderColor: d})
-  }
-  render () {
+  };
+
+  // will update main poster and metadata in response to clicked scrollThumb
+  _handleClick(url, title, episodes, borderColor){
+    this.setState({
+      main: url, 
+      title: title, 
+      episodes: episodes, 
+      borderColor: borderColor})
+  };
+
+  render() {
+    // create scrollThumbs component by mapping through program data
     let scrollThumbs = data.map((show) => {
       let url = show.product_image_url,
           title = show.title,
           episodes = show.episodes,
           borderColor = show.borderColor;
 
-      return(
+      return (
         <Scrollthumb
-          onPress={this._handleClick.bind(this, url,title,episodes, borderColor)}
+          onPress={this._handleClick.bind(this, url, title, episodes, borderColor)}
           source={url}
-          style={this.state.title === title ? styles.selected : styles.scroll}
-          title={title}
-          episodes={episodes}>
+          style={this.state.title === title ? styles.selected : styles.scroll}>
         </Scrollthumb>)
     });
 
     return (
       <View> 
-        <MainThumb style={styles.main}
+        <MainPoster style={styles.main}
           source={this.state.main} 
           style={[styles.mainPoster, {borderColor: this.state.borderColor}]}>
-        </MainThumb>
+        </MainPoster>
         
         <MetaText
           style={styles.text}>

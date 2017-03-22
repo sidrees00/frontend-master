@@ -1,18 +1,12 @@
 import React from 'react';
 import {
-  Dimensions,
   Image,
-  ScrollView,
-  StyleSheet,
-  Text,
   TouchableHighlight,
-  View,
 } from 'react-native';
 
-import styles from '../styles/stylesheet'
-
-function ScrollThumb(props){
-  return(
+// will render all shows as thumbnails
+function ScrollThumb(props) {
+  return (
     <TouchableHighlight 
       onPress={props.onPress}>
       <Image 
@@ -21,6 +15,12 @@ function ScrollThumb(props){
       </Image>
     </TouchableHighlight>
   )
-}
+};
+
+ScrollThumb.propTypes = {
+  onPress: React.PropTypes.func.isRequired,
+  source: React.PropTypes.string.isRequired,
+  style: React.PropTypes.object.isRequired
+};
 
 module.exports = ScrollThumb;

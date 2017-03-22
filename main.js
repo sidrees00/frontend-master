@@ -1,23 +1,18 @@
 import Expo from 'expo';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {View} from 'react-native';
+
 import HomePage from './views/homePage';
+import Styles from './styles/stylesheet';
 
 class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View style={Styles.container}>
         <HomePage/>
       </View>
     );
   }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#141414',
-  },
-});
+};
 
 Expo.registerRootComponent(App);
